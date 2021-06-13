@@ -1,7 +1,7 @@
 # DOH
 
 This docker image can be used to easily create your own DNS over HTTPs proxy. 
-It is very lightweight, based on [doh-proxy](https://github.com/jedisct1/doh-server) and higly configurable over ronment variables.
+It is very lightweight, based on [doh-proxy](https://github.com/jedisct1/doh-server) and higly configurable over environment variables.
 
 ## Requirements
 
