@@ -33,3 +33,17 @@ MAX_TTL 604800  # The max ammount of TTL for a DNS entry
 URI /dns  # URL the reverse proxy will resolve dns
 TIMEOUT 10  # Timeout for each request
 ```
+
+## How to use this image
+
+This image can be used as a normal docker image with the following tag
+
+```
+ghcr.io/r3d00/doh:1.0.0
+```
+
+For example you could pull the image by:
+
+```
+docker pull ghcr.io/r3d00/doh:1.0.0
+```
