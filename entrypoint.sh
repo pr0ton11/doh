@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-./doh-proxy \
+doh-proxy \
     -H ${VIRTUAL_HOST} \
     -l ${LISTEN_HOST}:${LISTEN_PORT} \
     -c ${MAX_CONCURRENT_CLIENTS} \

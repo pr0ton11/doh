@@ -30,13 +30,12 @@ ENV UPSTREAM_DNS_PORT 53
 ENV TIMEOUT 10
 
 # Prepare doh-proxy service
-WORKDIR /srv
-COPY --chown=root:root --from=build /usr/local/cargo/bin/doh-proxy /srv/
-COPY --chown=root:root entrypoint.sh /srv/
-RUN chmod +x /srv/doh-proxy && /srv/doh-proxy -V
+COPY --chown=root:root --from=build /usr/local/cargo/bin/doh-proxy /usr/local/bin/doh-proxy
+COPY --chown=root:root entrypoint.sh /
+RUN chmod +x /usr/local/bin/doh-proxy && doh-proxy -V
 
 # Expose default port
 EXPOSE 3000
 
 # Create entrypoint based on env variables
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
