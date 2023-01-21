@@ -1,10 +1,7 @@
-FROM rustlang/rust:nightly-slim as build
+FROM rust-musl-builder:latest as build
 ###
 ### DNS over HTTPs
 ###
-
-# Add alpine linux support
-RUN rustup target add x86_64-unknown-linux-musl
 
 # Compile DOH proxy without https support
 # This image is intended to run behind a reverse proxy for tls termination
