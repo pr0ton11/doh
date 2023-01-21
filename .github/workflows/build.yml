@@ -1,0 +1,28 @@
+# CI / CD for keydb-redisjson
+
+name: 'build'
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Build:checkout"
+        uses: actions/checkout@v2
+      - name: "Build:dockerlogin"
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Build:dockerimage"
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ghcr.io/pr0ton11/doh:latest

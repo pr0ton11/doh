@@ -39,11 +39,11 @@ TIMEOUT 10  # Timeout for each request
 This image can be used as a normal docker image with the following tag
 
 ```
-ghcr.io/r3d00/doh:1.0.0
+ghcr.io/pr0ton11/doh:latest
 ```
 
 For example you could pull the image by:
 
 ```
-docker pull ghcr.io/r3d00/doh:1.0.0
+docker pull ghcr.io/pr0ton11/doh:latest
 ```

@@ -8,11 +8,11 @@ FROM rustlang/rust:nightly as build
 RUN cargo install doh-proxy --no-default-features
 
 # Runtime container
-FROM debian:buster-slim
+FROM alpine:latest
 
 # Metadata
 LABEL version="1.0.0" \
-    maintainer="ms <ms@red0.pro>" \
+    maintainer="ms <ms@pr0.tech>" \
     description="DNS over HTTPs"
 
 # Environment variables to configure doh
@@ -23,7 +23,7 @@ ENV MAX_CONCURRENT_CLIENTS 512
 ENV MAX_CONCURRENT_CONNECTIONS 16
 ENV MIN_TTL 10
 ENV MAX_TTL 604800
-ENV URI /dns
+ENV URI /
 ENV PUBLIC_IP 100.100.100.100
 ENV UPSTREAM_DNS_HOST 9.9.9.9
 ENV UPSTREAM_DNS_PORT 53
