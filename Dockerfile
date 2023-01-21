@@ -1,4 +1,4 @@
-FROM ekidd/rust-musl-builder:latest as build
+FROM messense/rust-musl-cross:x86_64-musl as build
 ###
 ### DNS over HTTPs
 ###
