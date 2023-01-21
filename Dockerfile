@@ -30,7 +30,7 @@ ENV UPSTREAM_DNS_PORT 53
 ENV TIMEOUT 10
 
 # Prepare doh-proxy service
-COPY --chown=root:root --from=build /usr/local/cargo/bin/doh-proxy /usr/local/bin/doh-proxy
+COPY --chown=root:root --from=build /root/.cargo/bin/doh-proxy /usr/local/bin/doh-proxy
 COPY --chown=root:root entrypoint.sh /
 RUN chmod +x /usr/local/bin/doh-proxy && doh-proxy -V
 
