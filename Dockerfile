@@ -1,4 +1,4 @@
-FROM rust-musl-builder:latest as build
+FROM ekidd/rust-musl-builder:latest as build
 ###
 ### DNS over HTTPs
 ###
