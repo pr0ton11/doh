@@ -16,6 +16,7 @@ on:
 
 jobs:
   check:
+    name: "Check for updates in upstream"
     runs-on: ubuntu-latest
     outputs:
       upstream: ${{ steps.upstream.outputs.result }}
@@ -43,6 +44,7 @@ jobs:
         id: package
         uses: actions/github-script@v6
         env:
+          PACKAGE_OWNER: pr0ton11
           PACKAGE_NAME: doh
           PACKAGE_TYPE: container
         with:
@@ -50,7 +52,7 @@ jobs:
           script: |
             const {PACKAGE_NAME,PACKAGE_TYPE} = process.env;
             const {data: packages} = await github.rest.packages.getAllPackageVersionsForPackageOwnedByUser({
-              org: github.repository_owner,
+              org: PACKAGE_OWNER,
               package_type: PACKAGE_TYPE,
               package_name: PACKAGE_NAME,
             })
