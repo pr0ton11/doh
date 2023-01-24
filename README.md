@@ -12,6 +12,8 @@ It is very lightweight, based on [doh-proxy](https://github.com/jedisct1/doh-ser
 
 ## Configuration
 
+All configuration values can be set by changing environment variables. In the Dockerfile, the defaults are set.
+
 ### Important configuration
 The following configuration should be changed for your enviroment
 
