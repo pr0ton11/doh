@@ -51,8 +51,8 @@ jobs:
           script: |
             const {PACKAGE_NAME,PACKAGE_TYPE} = process.env;
             const {data: packages} = await github.rest.packages.getAllPackageVersionsForPackageOwnedByUser({
+              user: context.repo.owner,
               package_type: PACKAGE_TYPE,
-              context.repo.owner
               package_name: PACKAGE_NAME,
             })
             const latest = packages.filter((p) => p.metadata.container.tags.includes("latest"))[0];
