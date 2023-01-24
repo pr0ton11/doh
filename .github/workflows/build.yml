@@ -74,7 +74,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: "Build:version"
         id: version
-        run: echo "value=${{ github.event.inputs.version || needs.check.outputs.pocketbase }}" >> $GITHUB_OUTPUT
+        run: echo "value=${{ github.event.inputs.version || needs.check.outputs.upstream }}" >> $GITHUB_OUTPUT
       - name: "Build:dockerversion"
         id: meta
         uses: docker/metadata-action@v4
