@@ -11,7 +11,7 @@ RUN cargo install doh-proxy --no-default-features --target x86_64-unknown-linux-
 FROM alpine:latest
 
 # Metadata
-LABEL version="1.0.0" \
+LABEL version="0.9.7" \
     maintainer="ms <ms@pr0.tech>" \
     description="DNS over HTTPs"
 

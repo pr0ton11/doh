@@ -14,15 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Build:checkout"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: "Build:dockerlogin"
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: pr0ton11
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: "Build:dockerimage"
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           push: true
           tags: ghcr.io/pr0ton11/doh:latest
