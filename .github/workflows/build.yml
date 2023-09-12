@@ -86,7 +86,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}},value=${{ steps.version.outputs.value }}
             type=semver,pattern={{major}},value=${{ steps.version.outputs.value }}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
       - name: "Build:dockerimage"
         uses: docker/build-push-action@v4
         with:
