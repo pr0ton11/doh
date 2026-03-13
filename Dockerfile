@@ -10,9 +10,6 @@ RUN cargo install doh-proxy --no-default-features --target x86_64-unknown-linux-
 # Runtime container
 FROM alpine:latest
 
-# Metadata
-LABEL maintainer "Marc Singer <ms@pr0.tech>"
-
 # Environment variables to configure doh
 ENV VIRTUAL_HOST doh.domain.local
 ENV LISTEN_HOST 0.0.0.0
