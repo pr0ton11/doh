@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Get latest upstream release
         id: upstream
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           OWNER: DNSCrypt
           REPO: doh-server
@@ -42,7 +42,7 @@ jobs:
             return latest.tag_name.replace('v','')   
       - name: Get latest built version in this repo
         id: package
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           PACKAGE_NAME: doh
           PACKAGE_TYPE: container
